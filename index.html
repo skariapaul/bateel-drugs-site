@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bateel Drug Store LLC — Healthcare &amp; Wellness Distribution, UAE &amp; GCC</title>
+<meta name="description" content="Bateel Drug Store LLC is a Dubai-based distribution, sales and marketing partner for medicines, cosmetics, and health &amp; wellness brands across the UAE and GCC.">
+<style>
+  :root{
+    --ink:#12211d;
+    --ink-soft:#3d524b;
+    --teal:#0e5a4a;
+    --teal-deep:#0a4238;
+    --teal-tint:#e8f2ef;
+    --gold:#c19a5b;
+    --gold-soft:#f4ead9;
+    --paper:#fdfcfa;
+    --card:#ffffff;
+    --line:#e3e9e6;
+    --radius:14px;
+    --shadow:0 2px 24px rgba(14,90,74,.08);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+    color:var(--ink);background:var(--paper);line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%}
+  a{color:var(--teal);text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(253,252,250,.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.12rem;color:var(--ink);letter-spacing:.2px}
+  .logo-mark{
+    width:36px;height:36px;border-radius:10px;flex:none;
+    background:linear-gradient(135deg,var(--teal) 0%,var(--teal-deep) 70%);
+    display:grid;place-items:center;color:#fff;font-size:1.05rem;font-weight:800;
+  }
+  .logo small{display:block;font-size:.66rem;font-weight:500;color:var(--ink-soft);letter-spacing:.6px;text-transform:uppercase}
+  nav.links{display:flex;gap:26px;font-size:.93rem;font-weight:500}
+  nav.links a{color:var(--ink-soft)}
+  nav.links a:hover{color:var(--teal)}
+  .cta{
+    background:var(--teal);color:#fff !important;padding:9px 18px;border-radius:999px;
+    font-weight:600;transition:background .2s;
+  }
+  .cta:hover{background:var(--teal-deep)}
+  @media(max-width:820px){nav.links a:not(.cta){display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:
+      radial-gradient(900px 420px at 85% -10%,rgba(193,154,91,.16),transparent 60%),
+      radial-gradient(800px 500px at -10% 110%,rgba(14,90,74,.10),transparent 55%),
+      var(--paper);
+    padding:88px 0 72px;
+  }
+  .eyebrow{
+    display:inline-block;font-size:.76rem;font-weight:700;letter-spacing:1.6px;
+    text-transform:uppercase;color:var(--gold);margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(2rem,4.6vw,3.3rem);line-height:1.14;letter-spacing:-.5px;
+    max-width:15.5em;font-weight:800;
+  }
+  .hero h1 em{font-style:normal;color:var(--teal)}
+  .hero p.lede{max-width:38em;margin:22px 0 34px;font-size:1.1rem;color:var(--ink-soft)}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{
+    display:inline-block;padding:13px 26px;border-radius:999px;font-weight:600;font-size:.97rem;
+    transition:all .2s;
+  }
+  .btn-primary{background:var(--teal);color:#fff}
+  .btn-primary:hover{background:var(--teal-deep)}
+  .btn-ghost{border:1.5px solid var(--teal);color:var(--teal)}
+  .btn-ghost:hover{background:var(--teal-tint)}
+  .hero-stats{display:flex;gap:44px;margin-top:56px;flex-wrap:wrap}
+  .stat b{display:block;font-size:1.7rem;color:var(--teal);letter-spacing:-.5px}
+  .stat span{font-size:.87rem;color:var(--ink-soft)}
+
+  /* ---------- sections ---------- */
+  section{padding:80px 0}
+  .sec-head{max-width:44em;margin-bottom:44px}
+  .sec-head h2{font-size:clamp(1.5rem,2.8vw,2.1rem);letter-spacing:-.4px;margin:8px 0 12px}
+  .sec-head p{color:var(--ink-soft)}
+  .band{background:var(--teal-tint)}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+  .pillar{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px 26px;box-shadow:var(--shadow);
+  }
+  .pillar .ico{
+    width:44px;height:44px;border-radius:12px;background:var(--teal-tint);
+    display:grid;place-items:center;font-size:1.25rem;margin-bottom:16px;
+  }
+  .pillar h3{font-size:1.05rem;margin-bottom:8px}
+  .pillar p{font-size:.93rem;color:var(--ink-soft)}
+
+  /* brands */
+  .brand-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+  .brand{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:30px 28px;box-shadow:var(--shadow);display:flex;flex-direction:column;
+    transition:transform .2s,box-shadow .2s;
+  }
+  .brand:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(14,90,74,.13)}
+  .brand-top{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+  .brand-badge{
+    width:48px;height:48px;border-radius:12px;flex:none;display:grid;place-items:center;
+    font-weight:800;font-size:1.15rem;color:#fff;
+  }
+  .brand h3{font-size:1.15rem;letter-spacing:-.2px}
+  .brand .tag{font-size:.8rem;color:var(--gold);font-weight:600;letter-spacing:.4px}
+  .brand p{font-size:.94rem;color:var(--ink-soft);margin-bottom:14px}
+  .brand ul{
+    list-style:none;font-size:.88rem;color:var(--ink-soft);
+    display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;
+  }
+  .brand ul li{
+    background:var(--teal-tint);border-radius:999px;padding:4px 12px;
+  }
+  .b-urgaid{background:linear-gradient(135deg,#2f7fbf,#1d5e93)}
+  .b-tussolve{background:linear-gradient(135deg,#c98f3d,#a06a22)}
+  .b-reguard{background:linear-gradient(135deg,#c4534f,#993b38)}
+  .b-clair{background:linear-gradient(135deg,#1ba8a0,#0e716b)}
+  .b-fendoff{background:linear-gradient(135deg,#5d8f3d,#3f6626)}
+  .b-indeed{background:linear-gradient(135deg,#7a5fb5,#57408c)}
+
+  /* partner */
+  .partner-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;margin-bottom:40px}
+  .model{
+    background:rgba(255,255,255,.75);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 24px;
+  }
+  .model h3{font-size:1rem;margin-bottom:8px;color:var(--teal-deep)}
+  .model p{font-size:.9rem;color:var(--ink-soft)}
+  .partner-cta{
+    background:var(--teal);color:#fff;border-radius:var(--radius);
+    padding:44px 40px;display:flex;align-items:center;justify-content:space-between;
+    gap:24px;flex-wrap:wrap;
+  }
+  .partner-cta h3{font-size:1.35rem;letter-spacing:-.3px;margin-bottom:6px}
+  .partner-cta p{opacity:.85;font-size:.95rem;max-width:34em}
+  .partner-cta .btn{background:#fff;color:var(--teal)}
+  .partner-cta .btn:hover{background:var(--gold-soft)}
+
+  /* contact */
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+  .c-card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 24px;box-shadow:var(--shadow);
+  }
+  .c-card h3{font-size:.8rem;text-transform:uppercase;letter-spacing:1.2px;color:var(--gold);margin-bottom:10px}
+  .c-card p{font-size:.98rem}
+  .c-card a{font-weight:600}
+
+  /* footer */
+  footer{background:var(--teal-deep);color:#cfe0db;padding:44px 0;font-size:.88rem}
+  .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+  footer b{color:#fff}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo">
+      <div class="logo-mark">B</div>
+      <div>Bateel Drug Store<small>Healthcare &amp; Wellness Distribution</small></div>
+    </div>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#brands">Brands</a>
+      <a href="#partner">Partner With Us</a>
+      <a href="#contact" class="cta">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">UAE &amp; GCC · Distribution · Sales · Marketing</span>
+    <h1>Building a portfolio of <em>high-impact healthcare brands</em> for the region.</h1>
+    <p class="lede">
+      Bateel Drug Store LLC is an emerging distribution, sales, and marketing partner in the UAE and GCC.
+      Positioned at the critical Second-to-Last Mile, we support suppliers and retailers with the agility of a
+      growing company and the discipline of seasoned professionals — always in service of consumer wellness and health.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#brands">Explore Our Brands</a>
+      <a class="btn btn-ghost" href="#partner">Become a Partner</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><b>20+</b><span>years of collective team experience</span></div>
+      <div class="stat"><b>6</b><span>brand families in portfolio</span></div>
+      <div class="stat"><b>40+</b><span>products distributed</span></div>
+      <div class="stat"><b>GCC</b><span>regional market coverage</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Who We Are</span>
+      <h2>The Second-to-Last Mile, done right.</h2>
+      <p>
+        We distribute, sell, and market medicines, cosmetics, and health &amp; wellness products across the UAE and GCC.
+        Our team combines market insight with operational discipline to deliver strong commercial outcomes for the
+        brands we carry and the retailers we serve.
+      </p>
+    </div>
+    <div class="about-grid">
+      <div class="pillar">
+        <div class="ico">🚚</div>
+        <h3>Distribution</h3>
+        <p>Reliable route-to-market for pharmacy, retail, and institutional channels across the Emirates and beyond.</p>
+      </div>
+      <div class="pillar">
+        <div class="ico">📈</div>
+        <h3>Sales</h3>
+        <p>An experienced field team that builds listings, availability, and sell-through — not just sell-in.</p>
+      </div>
+      <div class="pillar">
+        <div class="ico">📣</div>
+        <h3>Marketing</h3>
+        <p>Brand-building and trade marketing tailored to GCC consumers, from launch planning to point-of-sale.</p>
+      </div>
+      <div class="pillar">
+        <div class="ico">🤝</div>
+        <h3>Partnership</h3>
+        <p>We grow with our suppliers and retailers — sharing insight, resources, and ambition at every step.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="brands">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Our Portfolio</span>
+      <h2>Six brand families. One standard of care.</h2>
+      <p>From first aid to daily nutrition, every brand we carry is chosen for quality, efficacy, and everyday usefulness.</p>
+    </div>
+    <div class="brand-grid">
+
+      <div class="brand">
+        <div class="brand-top">
+          <div class="brand-badge b-urgaid">U</div>
+          <div><h3>Urgaid</h3><span class="tag">Practical tools. Thoughtful care.</span></div>
+        </div>
+        <p>Everyday healthcare solutions that support personal care, comfort, and wellbeing — including the Urgaid Cool Patch fever range.</p>
+        <ul><li>Cool patches</li><li>Pill boxes &amp; cutters</li><li>Pimple patches</li><li>Sports tape</li><li>Nebulizer kits</li><li>Menstrual cups</li></ul>
+      </div>
+
+      <div class="brand">
+        <div class="brand-top">
+          <div class="brand-badge b-tussolve">T</div>
+          <div><h3>Tussolve</h3><span class="tag">9 Herbs + Honey</span></div>
+        </div>
+        <p>Ayurvedic herbal syrup for cough, cold, sore throat, and congestion. Non-drowsy and suitable for adults and children.</p>
+        <ul><li>Chesty &amp; dry cough</li><li>Sore throat relief</li><li>Nasal decongestion</li><li>Immunity support</li><li>150ml bottle</li></ul>
+      </div>
+
+      <div class="brand">
+        <div class="brand-top">
+          <div class="brand-badge b-reguard">R</div>
+          <div><h3>Reguard</h3><span class="tag">Trusted protection. Everyday care.</span></div>
+        </div>
+        <p>First-aid and hygiene essentials for minor wound care — from pocket packs to bulk formats for home and commercial use.</p>
+        <ul><li>Actiflex bandages</li><li>Waterproof bandages</li><li>Alcohol swabs</li><li>Surfasafe sanitizer</li><li>To-Go first aid kit</li></ul>
+      </div>
+
+      <div class="brand">
+        <div class="brand-top">
+          <div class="brand-badge b-clair">C</div>
+          <div><h3>Clair Oralcare</h3><span class="tag">A brighter daily routine</span></div>
+        </div>
+        <p>High-quality daily dental essentials for a healthy, fresh, confident smile — from brushes and paste to sonic and water flossing.</p>
+        <ul><li>Sensiclair toothpaste</li><li>Whitening serum &amp; strips</li><li>Toothbrushes</li><li>Tongue cleaners</li><li>Floss range</li><li>Soniclair 40000</li><li>Water flosser</li></ul>
+      </div>
+
+      <div class="brand">
+        <div class="brand-top">
+          <div class="brand-badge b-fendoff">F</div>
+          <div><h3>FendOff Repellents</h3><span class="tag">Protection outdoors</span></div>
+        </div>
+        <p>Five repellent formulations against mosquitoes, ticks, and sandflies — from 50% DEET travel strength to DEET-free naturals for kids.</p>
+        <ul><li>Ultra 30% DEET</li><li>Max 50% DEET</li><li>Junior 10% DEET</li><li>Natural (DEET-free)</li><li>DUO repel + afterbite</li></ul>
+      </div>
+
+      <div class="brand">
+        <div class="brand-top">
+          <div class="brand-badge b-indeed">I</div>
+          <div><h3>Indeed Nutrition</h3><span class="tag">Real Ingredients. Real Results.</span></div>
+        </div>
+        <p>Functional nutrition supplements for immune support and everyday vitality, built on quality ingredients.</p>
+        <ul><li>Omega 3 / 3-6-9</li><li>Daily Multi Plus</li><li>Marine Collagen Plus</li><li>MCT Oil</li><li>Phytoflex</li><li>Moringa</li><li>Fenugreek</li></ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="partner" class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Be Our Partner</span>
+      <h2>Partnerships that foster innovation, growth, and success.</h2>
+      <p>We believe partnerships are foundational to growth — leveraging mutual strengths, market access, and shared resources to expand together.</p>
+    </div>
+    <div class="partner-grid">
+      <div class="model"><h3>Strategic Partnership</h3><p>Long-term collaboration aligning portfolios, capabilities, and regional ambitions.</p></div>
+      <div class="model"><h3>Distribution</h3><p>Route-to-market for your brand across UAE and GCC pharmacy and retail channels.</p></div>
+      <div class="model"><h3>Co-marketing</h3><p>Joint campaigns and trade marketing that build awareness and sell-through.</p></div>
+      <div class="model"><h3>Retail</h3><p>Placement, merchandising, and availability programs with our retail network.</p></div>
+    </div>
+    <div class="partner-cta">
+      <div>
+        <h3>Have a brand that belongs in the GCC?</h3>
+        <p>Tell us about your products and ambitions — our team responds within two business days.</p>
+      </div>
+      <a class="btn" href="mailto:info@bateeldrugs.com?subject=Partnership%20Enquiry">Start the Conversation</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Contact</span>
+      <h2>Do you have any questions?</h2>
+      <p>We're available Monday to Saturday, 8am–5pm (GST).</p>
+    </div>
+    <div class="contact-grid">
+      <div class="c-card">
+        <h3>Email</h3>
+        <p><a href="mailto:info@bateeldrugs.com">info@bateeldrugs.com</a></p>
+      </div>
+      <div class="c-card">
+        <h3>Phone</h3>
+        <p><a href="tel:+97145801279">+971 4 580 1279</a></p>
+      </div>
+      <div class="c-card">
+        <h3>Address</h3>
+        <p>S19, Y15 England Cluster,<br>International City, Dubai, UAE</p>
+      </div>
+      <div class="c-card">
+        <h3>Hours</h3>
+        <p>Monday – Saturday<br>8:00am – 5:00pm</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div><b>Bateel Drug Store LLC</b> · Dubai, United Arab Emirates</div>
+    <div>© 2026 Bateel Drug Store LLC. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
