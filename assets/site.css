@@ -89,6 +89,30 @@ section{padding:80px 0}
 .hero p.lede{max-width:38em;margin:22px 0 32px;font-size:1.08rem;color:var(--ink-soft)}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
 .hero-art img{border-radius:var(--radius);box-shadow:var(--shadow);width:100%}
+
+/* ---------- hero slideshow ---------- */
+.slideshow{position:relative;border-radius:var(--radius);overflow:hidden;
+  box-shadow:var(--shadow);background:#fff}
+.slides{position:relative;aspect-ratio:1100/613}
+.slide{position:absolute;inset:0;margin:0;opacity:0;transition:opacity .9s ease}
+.slide.is-active{opacity:1}
+.slide img{width:100%;height:100%;object-fit:cover;display:block;
+  border-radius:0;box-shadow:none}
+/* slides range from white-background packshots to dark outdoor photography,
+   so the dots sit on their own scrim to stay visible on both */
+.dots{position:absolute;left:50%;transform:translateX(-50%);bottom:14px;
+  display:flex;align-items:center;gap:8px;padding:7px 11px;border-radius:999px;
+  background:rgba(18,33,29,.38);backdrop-filter:blur(4px)}
+.dot{width:8px;height:8px;padding:0;border:0;border-radius:999px;cursor:pointer;
+  background:rgba(255,255,255,.55);
+  transition:width .3s ease,background .3s ease}
+.dot:hover{background:#fff}
+.dot.is-active{width:24px;background:#fff}
+.dot:focus-visible{outline:2px solid #fff;outline-offset:2px}
+@media(prefers-reduced-motion:reduce){
+  .slide{transition:none}
+  .dot{transition:none}
+}
 .hero-stats{display:flex;gap:44px;margin-top:52px;flex-wrap:wrap}
 .stat b{display:block;font-size:1.7rem;color:var(--teal);letter-spacing:-.5px}
 .stat span{font-size:.87rem;color:var(--ink-soft)}
@@ -125,12 +149,7 @@ section{padding:80px 0}
 .brand .logo-row{height:46px;margin-bottom:12px;display:flex;align-items:center}
 .brand .logo-row img{max-height:46px;max-width:100%;width:auto}
 .brand .tag{font-size:.8rem;color:var(--bc,var(--teal));font-weight:700;letter-spacing:.3px;display:block;margin-bottom:10px}
-.brand p{font-size:.94rem;color:var(--ink-soft);margin-bottom:14px}
-.brand ul{
-  list-style:none;font-size:.85rem;color:var(--ink-soft);
-  display:flex;flex-wrap:wrap;gap:7px;margin:0 0 18px;
-}
-.brand ul li{background:var(--teal-tint);border-radius:999px;padding:4px 11px}
+.brand p{font-size:.94rem;color:var(--ink-soft);margin-bottom:18px}
 .brand .more{
   margin-top:auto;font-weight:700;font-size:.9rem;color:var(--bc,var(--teal));
   display:inline-flex;align-items:center;gap:7px;
