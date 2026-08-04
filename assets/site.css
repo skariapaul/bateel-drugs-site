@@ -93,7 +93,9 @@ section{padding:80px 0}
 /* ---------- hero slideshow ---------- */
 .slideshow{position:relative;border-radius:var(--radius);overflow:hidden;
   box-shadow:var(--shadow);background:#fff}
-.slides{position:relative;aspect-ratio:1100/613}
+/* padding-top ratio rather than aspect-ratio: works on every engine, and the
+   box still has height if the property is unsupported */
+.slides{position:relative;padding-top:55.73%;overflow:hidden}
 .slide{position:absolute;inset:0;margin:0;opacity:0;transition:opacity .9s ease}
 .slide.is-active{opacity:1}
 .slide img{width:100%;height:100%;object-fit:cover;display:block;

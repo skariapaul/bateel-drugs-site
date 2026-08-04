@@ -7,7 +7,18 @@
 <meta name="description" content="Bateel Drug Store LLC is a Dubai-based distribution, sales and marketing partner for medicines, cosmetics, and health and wellness brands across the UAE and GCC.">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/favicon.png">
-<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/site.css?v=5">
+<style>
+/* Critical slideshow containment, inlined deliberately.
+   index.html and site.css are cached independently by GitHub Pages, so a browser
+   can hold this HTML alongside a stylesheet that predates the slideshow. Without
+   these four rules every slide renders at full height and the hero grows to
+   ~4300px. Inline styles ship with the markup, so they can never fall out of sync. */
+.slides{position:relative;padding-top:55.73%;overflow:hidden}
+.slide{position:absolute;top:0;left:0;right:0;bottom:0;margin:0;opacity:0}
+.slide.is-active{opacity:1}
+.slide img{width:100%;height:100%;object-fit:cover;display:block}
+</style>
 </head>
 <body>
 
