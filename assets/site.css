@@ -115,12 +115,15 @@ section{padding:80px 0}
 }
 .brand:hover{transform:translateY(-4px);box-shadow:0 10px 34px rgba(9,184,157,.20)}
 .brand .shot{
-  background:var(--bt,var(--teal-tint));height:172px;display:grid;place-items:center;padding:18px;
+  background:var(--bt,var(--teal-tint));height:172px;padding:18px;overflow:hidden;
 }
-.brand .shot img{max-height:100%;width:auto;object-fit:contain}
+/* height+width 100% with contain so portrait art can never overflow the tile */
+.brand .shot img{display:block;height:100%;width:100%;object-fit:contain}
 .brand .body{padding:24px 26px 26px;display:flex;flex-direction:column;flex:1}
-.brand .logo-row{height:38px;margin-bottom:12px;display:flex;align-items:center}
-.brand .logo-row img{max-height:38px;width:auto}
+/* fixed row height keeps every card's copy on the same baseline, whatever the
+   logo's aspect ratio (FendOff's is a tall stacked lockup) */
+.brand .logo-row{height:46px;margin-bottom:12px;display:flex;align-items:center}
+.brand .logo-row img{max-height:46px;max-width:100%;width:auto}
 .brand .tag{font-size:.8rem;color:var(--bc,var(--teal));font-weight:700;letter-spacing:.3px;display:block;margin-bottom:10px}
 .brand p{font-size:.94rem;color:var(--ink-soft);margin-bottom:14px}
 .brand ul{
@@ -154,11 +157,14 @@ section{padding:80px 0}
   overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;
 }
 .prod:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
-.prod .ph{height:190px;background:#fff;display:grid;place-items:center;padding:16px;border-bottom:1px solid var(--line)}
-.prod .ph img{max-height:100%;max-width:100%;object-fit:contain}
-.prod .info{padding:16px 18px 20px}
-.prod h3{font-size:.98rem;line-height:1.35;margin-bottom:6px}
-.prod .sku{font-size:.78rem;color:var(--accent);font-weight:700;letter-spacing:.4px}
+.prod .ph{height:190px;background:#fff;padding:16px;border-bottom:1px solid var(--line);overflow:hidden}
+.prod .ph img{display:block;height:100%;width:100%;object-fit:contain}
+.prod .info{padding:16px 18px 20px;display:flex;flex-direction:column}
+/* reserve two lines for the name and one for the code, so the description
+   starts at the same height on every card in a row */
+.prod h3{font-size:.98rem;line-height:1.35;min-height:2.7em}
+.prod .sku{display:block;font-size:.78rem;color:var(--accent);font-weight:700;
+  letter-spacing:.4px;line-height:1.5;min-height:1.5em;margin-top:2px}
 .prod p{font-size:.86rem;color:var(--ink-soft);margin-top:6px}
 
 .feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
